@@ -7,8 +7,8 @@ AllCops:
   NewCops: enable
   SuggestExtensions: false
   Exclude:
-    - ./.gems/**/*.rb
-    - ./vendor/bundle/**/*.rb
+    - ./.gems/**/*
+    - ./vendor/bundle/**/*
 
 Rails:
   Enabled: true
