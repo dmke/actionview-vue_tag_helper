@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+# Run the RSpec suite against every gemfile in gemfiles/.
+# Any extra arguments are forwarded to rspec, e.g.:
+#   bin/test --format documentation
+#   bin/test spec/action_view/helpers/vue_tag_helper_spec.rb
+set -e
+
+root="$(cd "$(dirname "$0")/.." && pwd)"
+
+bin/bundle-all install --quiet
+bin/bundle-all exec rspec "$@"

@@ -1,0 +1,14 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+gemspec path: ".."
+
+gem "actionview", "~> 8.1.0"
+
+group :development, :test do
+  gem "rspec"
+  gem "rubocop"
+  gem "rubocop-rails"
+  gem "rubocop-rspec"
+end

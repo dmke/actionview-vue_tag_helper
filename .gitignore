@@ -1,0 +1,5 @@
+./.gems
+*.gem
+/*.local
+Gemfile.lock
+/gemfiles/*.lock

@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+# Run a Bundler command against every gemfile in gemfiles/, each in its own
+# isolated gemset under .gems/<gemfile-name>.
+#
+# Examples:
+#   bin/bundle-all install
+#   bin/bundle-all update
+#   bin/bundle-all clean --force
+set -e
+
+root="$(cd "$(dirname "$0")/.." && pwd)"
+
+for gemfile in "$root"/gemfiles/*.gemfile; do
+  name="$(basename "$gemfile" .gemfile)"
+
+  echo ""
+  echo "=== $gemfile ==="
+  BUNDLE_GEMFILE="$gemfile" BUNDLE_PATH="$root/.gems/$name" bundle "$@"
+done

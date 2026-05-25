@@ -88,6 +88,64 @@ The helper is available in all views as soon as the gem is loaded. No
 `include` or initialiser is required — it hooks into ActionView via
 `ActiveSupport.on_load(:action_view)`.
 
+## Contributing
+
+Pull requests are welcome. Please always add a test with your changes.
+
+### Prerequisites
+
+- [rbenv](https://github.com/rbenv/rbenv) with the
+  [rbenv-gemset](https://github.com/jf/rbenv-gemset) plugin
+- Ruby 4.0 (`rbenv install 4.0`)
+
+The project uses local gemsets stored under `.gems/` (gitignored).
+`.ruby-version` and `.ruby-gemset` are already checked in, so rbenv
+picks up the right Ruby and gemset automatically when you `cd` into the
+project.
+
+### Setup
+
+```sh
+git clone https://github.com/dmke/actionview-vue_tag_helper
+cd actionview-vue_tag_helper
+bundle install   # installs into .gems/4.0/...
+```
+
+### Running the tests
+
+Against the default gemfile (Rails 8.1):
+
+```sh
+bundle exec rspec
+```
+
+Against all supported Rails versions:
+
+```sh
+bin/test
+```
+
+Each gemfile gets its own isolated gemset under `.gems/` (e.g.
+`.gems/rails_8_0`, `.gems/rails_8_1`, `.gems/rails_main`).
+
+### Updating dependencies
+
+```sh
+bin/bundle-all update
+```
+
+### Cleaning stale gems
+
+```sh
+bin/bundle-all clean --force
+```
+
+### Linting
+
+```sh
+bundle exec rubocop
+```
+
 ## License
 
 MIT - see [LICENSE.txt](LICENSE.txt).
