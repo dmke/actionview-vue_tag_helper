@@ -1,0 +1,14 @@
+= vue.my_component(label: "Hello, World!", variant: :primary)
+= vue.x_btn(disabled: true)
+= vue.x_btn(disabled: false)
+= vue.x_counter(count: 0, ratio: 1.5)
+= vue.my_list(items: %w[alpha beta gamma])
+= vue.my_widget(config: { theme: "dark", columns: 3 })
+= vue.my_card(class: %w[card elevated rounded])
+= vue.my_component(data: { user: { id: 1, name: "Alice" }, count: 42 })
+= vue.nav_bar(aria: { label: "Main navigation" })
+= vue.my_chart \
+  width: 600,
+  height: 400
+= vue.my_panel(title: "Welcome") do
+  | Body content.

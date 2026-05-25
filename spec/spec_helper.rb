@@ -3,6 +3,20 @@
 require "bundler/setup"
 require "action_view"
 require "actionview/vue_tag_helper"
+require "haml/rails_template"
+require "slim"
+
+# Slim ships a Railtie that only runs inside a full Rails app. Register the
+# ActionView template handler manually, mirroring what the Railtie does.
+Slim::RailsTemplate = Temple::Templates::Rails(
+  Slim::Engine,
+  register_as:     :slim,
+  generator:       Temple::Generators::RailsOutputBuffer,
+  disable_capture: true,
+  streaming:       true
+)
+
+Dir[File.expand_path("support/**/*.rb", __dir__)].each { |f| require f }
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

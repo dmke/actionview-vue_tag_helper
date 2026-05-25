@@ -7,8 +7,10 @@ gemspec path: ".."
 gem "rails", github: "rails/rails", branch: "main"
 
 group :development, :test do
+  gem "haml", "~> 7.2.0"
   gem "rspec"
   gem "rubocop"
   gem "rubocop-rails"
   gem "rubocop-rspec"
+  gem "slim", "~> 5.2.0"
 end
