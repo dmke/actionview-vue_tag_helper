@@ -8,6 +8,7 @@ AllCops:
   SuggestExtensions: false
   Exclude:
     - ./.gems/**/*.rb
+    - ./vendor/bundle/**/*.rb
 
 Rails:
   Enabled: true
